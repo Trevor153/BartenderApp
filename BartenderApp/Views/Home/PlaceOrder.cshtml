@@ -1,0 +1,23 @@
+﻿@model ViewModel
+
+<DOCTYPE! html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Place Order</title>
+</head>
+<body>
+    <div class="text-center">
+        <form asp-controller="Home" asp-action="CreateOrder" asp-for="order" method="post">
+            <select class="dropdown">
+                <option value="" disabled selected>Select Filter</option>
+                @foreach (var m in Model.Menu)
+                {
+                    <option value="@m.ID">@m.ItemName --- @m.ItemPrice.ToString("c")</option>
+                }
+            </select>
+            <button class="button" type="submit">Place Order</button>
+        </form>
+    </div>
+</body>
+</html>

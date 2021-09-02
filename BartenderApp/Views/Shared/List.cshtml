@@ -1,0 +1,8 @@
+﻿@model IEnumerable<MenuItem>
+@foreach (var p in Model)
+{
+    <div>
+        <h5>@p.ItemName --- @p.ItemPrice.ToString("c")</h5>
+        <br />
+    </div>
+}

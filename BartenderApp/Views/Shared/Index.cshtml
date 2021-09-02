@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IEnumerable<MenuItem>
+<DOCTYPE! html>
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Home</title>
+    </head>
+    <body>
+        <u><h2 class="text-center">Menu</h2></u>
+        <br />
+        <div class="text-center">
+            @foreach (var p in Model)
+            {
+                <h5>@p.ItemName --- @p.ItemPrice.ToString("c")</h5>
+                <br />
+            }
+            <hr>
+            <a class="btn btn-primary" asp-controller="Home" asp-action="Customer">Customers</a>
+            <br />
+            <br />
+            <a class="btn btn-primary" asp-controller="Home" asp-action="Bartender">Staff</a>
+        </div>
+    </body>
+</html>
